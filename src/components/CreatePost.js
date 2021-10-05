@@ -14,11 +14,11 @@ export default function CreatePost() {
 
     // need to use different function, pls wait
     firestore.collection('posts').add({
-      title,
-      subTitle,
-      content,
+      title: title,
+      content: content,
+      subTitle: subTitle,
+      createdAt: new Date(),
     });
-    
   }
   return (
     <div className="create-post">
