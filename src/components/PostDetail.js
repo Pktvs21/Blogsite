@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { firestore } from '../firebase';
 import {useParams} from 'react-router-dom';
+import Radium from 'radium';
 
-export default function PostDetail() {
+function PostDetail() {
     const [post,setPost] =useState({});
     const {postId} =useParams();
     useEffect(()=>{
@@ -13,8 +14,28 @@ export default function PostDetail() {
     },[])
     return (
         <div className="post-detail">
-            <h1>{post.title}</h1>
-            <p>{post.content}</p>
+            <h1 style={styles.heading}>{post.title}</h1>
+            <p style={styles.PostDetail}>{post.content}</p>
         </div>
     )
+}
+export default Radium(PostDetail);
+
+
+const styles={
+    PostDetail:{
+        border:'1px solid #e1e1e1',
+        padding:5,
+        paddingTop:10,
+        borderRadius:5,
+        '@media(max-width:720px)':{
+            color:'pink'
+        }
+    },
+    heading:{
+        textAlign:'center',
+        ':hover':{
+            color:'red'
+        },
+    }
 }

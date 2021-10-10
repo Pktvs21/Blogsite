@@ -49,9 +49,10 @@ code {
   font-style: italic;
   margin-bottom: 20px;
 }
-.post-detail h1 {
+/* .post-detail h1 {
   text-align: center;
-}
+  color: #2196f3;
+} */
 #nav {
   list-style-type: none;
   padding: 0;
